@@ -24,7 +24,7 @@ node {
       // login Azure
           az login --use-device-code
           az webapp config appsettings set --resource-group PWEnterpriseSPCResourceGroup_Dev  --name  P5-React-Web-App-5433  --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
-          az webapp deploy --resource-group PWEnterpriseSPCResourceGroup_Dev --name P5-React-Web-App-5433
+          az webapp deployment source config --branch poc --manual-integration --name P5-React-Web-App-5433 --repo-url https://github.com/Nadine-Lissouck/javawebappsample --resource-group PWEnterpriseSPCResourceGroup_Dev
           az account set -s $AZURE_SUBSCRIPTION_ID
       }
       // get publish settings
