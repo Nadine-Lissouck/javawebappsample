@@ -22,10 +22,9 @@ node {
       def resourceGroup = 'PWEnterpriseSPCResourceGroup_Dev'
       def webAppName = 'P5-React-Web-App-5433'
       // login Azure
-          az login --use-device-code
-          az webapp config appsettings set --resource-group PWEnterpriseSPCResourceGroup_Dev  --name  P5-React-Web-App-5433  --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
-          az webapp deployment source config --branch poc --manual-integration --name P5-React-Web-App-5433 --repo-url https://github.com/Nadine-Lissouck/javawebappsample --resource-group PWEnterpriseSPCResourceGroup_Dev
-          az account set -s $AZURE_SUBSCRIPTION_ID
+          az login –use-device-login
+          az webapp deploy --resource-group PWEnterpriseSPCResourceGroup_Dev --name P5-React-Web-App-5433-Deploy --src-path ./build.zip
+
       }
       // get publish settings
       def pubProfilesJson = sh script: "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName", returnStdout: true
