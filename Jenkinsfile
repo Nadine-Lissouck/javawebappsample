@@ -23,7 +23,9 @@ node {
       def webAppName = 'P5-React-Web-App-5433'
       // login Azure
           az login --use-device-code
+          az webapp up --name "P5-React-Web-App-5433" --plan "AppServicePlan-P5-React-Web-App-5433"
           az account set -s $AZURE_SUBSCRIPTION_ID
+      
         '''
       }
       // get publish settings
