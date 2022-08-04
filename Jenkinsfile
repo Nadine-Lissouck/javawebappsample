@@ -20,11 +20,11 @@ node {
   
     stage('deploy') {
       def resourceGroup = 'PWEnterpriseSPCResourceGroup_Dev'
-      def webAppName = 'PWEnterpriseSPCOACISJumpBox'
+      def webAppName = 'P5-React-Web-App-5433'
       // login Azure
       withCredentials([usernamePassword(credentialsId: 'AzureService', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
        sh '''
-          az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID
+          az login --use-device-code
           az account set -s $AZURE_SUBSCRIPTION_ID
         '''
       }
