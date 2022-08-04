@@ -25,8 +25,6 @@ node {
           az login --use-device-code
           az webapp up --name "P5-React-Web-App-5433" --plan "AppServicePlan-P5-React-Web-App-5433"
           az account set -s $AZURE_SUBSCRIPTION_ID
-      
-        '''
       }
       // get publish settings
       def pubProfilesJson = sh script: "az webapp deployment list-publishing-profiles -g $resourceGroup -n $webAppName", returnStdout: true
