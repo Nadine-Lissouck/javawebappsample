@@ -35,5 +35,3 @@ node {
       sh 'az logout'
     }
   }
- 
-}
