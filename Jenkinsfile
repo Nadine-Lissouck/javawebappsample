@@ -22,8 +22,6 @@ node {
       def resourceGroup = 'PWEnterpriseSPCResourceGroup_Dev'
       def webAppName = 'P5-React-Web-App-5433'
       // login Azure
-      withCredentials([usernamePassword(credentialsId: 'AzureService', passwordVariable: 'AZURE_CLIENT_SECRET', usernameVariable: 'AZURE_CLIENT_ID')]) {
-       sh '''
           az login --use-device-code
           az account set -s $AZURE_SUBSCRIPTION_ID
         '''
