@@ -22,7 +22,6 @@ node {
       def resourceGroup = 'PW-EnterpriseSPC-ResourceGroup'
       def webAppName = 'oacis-react-webapp-devops-test'
       // login Azure
-          az login –use-device-login
           az webapp deploy --resource-group PW-EnterpriseSPC-ResourceGroup --name oacis-react-webapp-devops-test --src-path ./build.zip
 
       }
