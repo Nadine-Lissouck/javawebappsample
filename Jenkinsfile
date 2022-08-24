@@ -8,7 +8,7 @@ def getFtpPublishProfile(def publishProfilesJson) {
 }
 
 node {
-  withEnv(['AZURE_SUBSCRIPTION_ID=c696cece-97b8-4c14-8207-828cacab5433',
+  withEnv(['AZURE_SUBSCRIPTION_ID=0204ac69-8342-4e69-8716-aecb5b5ccfa8',
         'AZURE_TENANT_ID=36da45f1-dd2c-4d1f-af13-5abe46b99921']) {
     stage('init') {
       checkout scm
@@ -19,11 +19,11 @@ node {
     }
   
     stage('deploy') {
-      def resourceGroup = 'PWEnterpriseSPCResourceGroup_Dev'
-      def webAppName = 'P5-React-Web-App-5433'
+      def resourceGroup = 'PW-EnterpriseSPC-ResourceGroup'
+      def webAppName = 'oacis-react-webapp-devops-test'
       // login Azure
           az login –use-device-login
-          az webapp deploy --resource-group PWEnterpriseSPCResourceGroup_Dev --name P5-React-Web-App-5433-Deploy --src-path ./build.zip
+          az webapp deploy --resource-group PW-EnterpriseSPC-ResourceGroup --name oacis-react-webapp-devops-test --src-path ./build.zip
 
       }
       // get publish settings
